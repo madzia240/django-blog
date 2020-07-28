@@ -7,7 +7,9 @@
                 {{ post.published_date }}
             </div>
             <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p>{{ post.text|truncatewords:50|linebreaksbr }}</p>
+            <a href="{% url 'post_detail' pk=post.pk %}">read more...</a>
         </div>
     {% endfor %}
+    {% include "blog/pagination.html" with page=posts %}
 {% endblock %}
