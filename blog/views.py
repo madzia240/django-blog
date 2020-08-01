@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 
 
 def post_list(request):
-    object_list = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    object_list = Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
     paginator = Paginator(object_list, 3)
     page = request.GET.get('page')
     try:
@@ -51,3 +51,11 @@ def post_edit(request, pk):
     else:
         form = PostForm(instance=post)
     return render(request, 'blog/post_edit.html', {'form': form})
+
+
+def contact(request):
+    return render(request, 'blog/contact.html')
+
+
+def about(request):
+    return render(request, 'blog/about.html')
