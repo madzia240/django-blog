@@ -6,6 +6,7 @@
   letter-spacing: 1.5px;
 }
 
+
 /* burger */
 
 .burger {
@@ -20,9 +21,11 @@
 .burger div img {
   width: 100%;
 }
+
 .burger .open {
   display: block;
 }
+
 .burger .close {
   display: none;
 }
@@ -69,9 +72,11 @@ nav ul li a:hover {
     position: relative;
     top: 0;
   }
+
   nav ul {
     flex-direction: row;
   }
+
   .burger {
     display: none;
   }
@@ -125,6 +130,12 @@ h4 {
 
 .post {
   margin-bottom: 70px;
+}
+
+.post .post_image {
+  width: 200px;
+  height: 100px;
+  border: 2px solid black;
 }
 
 .post h2 a,

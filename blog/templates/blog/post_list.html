@@ -7,6 +7,7 @@
         {{ post.published_date }}
     </div>
     <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+    <div class="post_image"><img src="{{ MEDIA_URL }}{{ post.image.url }}" alt="image"></div>
     <p>{{ post.text|truncatewords:50|linebreaksbr }}</p>
     <a href="{% url 'post_detail' pk=post.pk %}">read more...</a>
     <a href="{% url 'post_detail' pk=post.pk %}">Comments: {{ post.comments.count }}</a>
